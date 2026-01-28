@@ -8,17 +8,17 @@
 
 let businessData = {
     clients: [
-        { id: 1, name: 'Acme Corp', email: 'contact@acme.com', project: 'Website Redesign', status: 'active', amount: 8500, avatar: 'AC' },
-        { id: 2, name: 'TechInnovate', email: 'info@techinnovate.io', project: 'Mobile App Dev', status: 'pending', amount: 15200, avatar: 'TI' },
-        { id: 3, name: 'GlobalSystems', email: 'hello@globalsys.com', project: 'Cloud Migration', status: 'completed', amount: 22750, avatar: 'GS' },
-        { id: 4, name: 'DigitalSolutions', email: 'team@digitalsol.net', project: 'SEO Campaign', status: 'active', amount: 6300, avatar: 'DS' },
-        { id: 5, name: 'InnovateLabs', email: 'hello@innovatelabs.io', project: 'Branding', status: 'pending', amount: 4200, avatar: 'IL' },
-        { id: 6, name: 'CloudFirst', email: 'info@cloudfirst.com', project: 'DevOps Setup', status: 'active', amount: 12000, avatar: 'CF' }
+        { id: 1, name: 'Reliance', email: 'contact@reliance.com', project: 'Website Redesign', status: 'active', amount: 8500, avatar: 'AC' },
+        { id: 2, name: 'TATA', email: 'info@tata.io', project: 'Mobile App Dev', status: 'pending', amount: 15200, avatar: 'TI' },
+        { id: 3, name: 'Mahindra', email: 'hello@mahindra.com', project: 'Cloud Migration', status: 'completed', amount: 22750, avatar: 'GS' },
+        { id: 4, name: 'Infosys', email: 'team@infosys.net', project: 'SEO Campaign', status: 'active', amount: 6300, avatar: 'DS' },
+        { id: 5, name: 'Airtel', email: 'hello@airtel.io', project: 'Branding', status: 'pending', amount: 4200, avatar: 'IL' },
+        { id: 6, name: 'Zoho', email: 'info@zoho.com', project: 'DevOps Setup', status: 'active', amount: 12000, avatar: 'CF' }
     ],
     activities: [
-        { icon: '💼', color: 'blue', title: 'New project started', description: 'Website redesign for Acme Corp', time: '2 hours ago' },
-        { icon: '✅', color: 'green', title: 'Invoice paid', description: 'Payment received from TechInnovate', time: '5 hours ago' },
-        { icon: '👤', color: 'orange', title: 'New client added', description: 'DigitalSolutions joined your network', time: '1 day ago' },
+        { icon: '💼', color: 'blue', title: 'New project started', description: 'Website redesign for Reliance', time: '2 hours ago' },
+        { icon: '✅', color: 'green', title: 'Invoice paid', description: 'Payment received from TATA', time: '5 hours ago' },
+        { icon: '👤', color: 'orange', title: 'New client added', description: 'Mahindra joined your network', time: '1 day ago' },
         { icon: '📊', color: 'yellow', title: 'Report generated', description: 'Q4 financial summary is ready', time: '2 days ago' },
         { icon: '🚀', color: 'blue', title: 'Project milestone', description: 'Cloud migration 75% complete', time: '3 days ago' }
     ],
@@ -38,9 +38,9 @@ let businessData = {
         { day: 'Sun', value: 13800 }
     ],
     notifications: [
-        { id: 1, title: 'New payment received', message: 'TechInnovate paid $15,200', read: false },
+        { id: 1, title: 'New payment received', message: 'TATA paid $15,200', read: false },
         { id: 2, title: 'Project deadline approaching', message: 'Website Redesign due in 3 days', read: false },
-        { id: 3, title: 'New message', message: 'Client inquiry from CloudFirst', read: true }
+        { id: 3, title: 'New message', message: 'Client inquiry from Mahindra', read: true }
     ]
 };
 
@@ -1038,12 +1038,12 @@ function showProjectsContent() {
     const headerHTML = dashboard.querySelector('.page-header').outerHTML;
     
     const projects = [
-        { name: 'Website Redesign', client: 'Acme Corp', progress: 75, status: 'active', dueDate: 'Jan 30, 2026' },
-        { name: 'Mobile App Dev', client: 'TechInnovate', progress: 45, status: 'active', dueDate: 'Feb 15, 2026' },
-        { name: 'Cloud Migration', client: 'GlobalSystems', progress: 100, status: 'completed', dueDate: 'Jan 15, 2026' },
-        { name: 'SEO Campaign', client: 'DigitalSolutions', progress: 60, status: 'active', dueDate: 'Feb 5, 2026' },
-        { name: 'Branding', client: 'InnovateLabs', progress: 20, status: 'pending', dueDate: 'Feb 28, 2026' },
-        { name: 'DevOps Setup', client: 'CloudFirst', progress: 85, status: 'active', dueDate: 'Jan 28, 2026' }
+        { name: 'Website Redesign', client: 'Reliance', progress: 75, status: 'active', dueDate: 'Jan 30, 2026' },
+        { name: 'Mobile App Dev', client: 'TATA', progress: 45, status: 'active', dueDate: 'Feb 15, 2026' },
+        { name: 'Cloud Migration', client: 'Mahindra', progress: 100, status: 'completed', dueDate: 'Jan 15, 2026' },
+        { name: 'SEO Campaign', client: 'Infosys', progress: 60, status: 'active', dueDate: 'Feb 5, 2026' },
+        { name: 'Branding', client: 'Airtel', progress: 20, status: 'pending', dueDate: 'Feb 28, 2026' },
+        { name: 'DevOps Setup', client: 'Zoho', progress: 85, status: 'active', dueDate: 'Jan 28, 2026' }
     ];
     
     dashboard.innerHTML = headerHTML + `
@@ -1094,11 +1094,11 @@ function showInvoicesContent() {
     const headerHTML = dashboard.querySelector('.page-header').outerHTML;
     
     const invoices = [
-        { id: 'INV-001', client: 'TechInnovate', amount: 15200, status: 'paid', date: 'Jan 25, 2026' },
-        { id: 'INV-002', client: 'Acme Corp', amount: 8500, status: 'pending', date: 'Jan 27, 2026' },
-        { id: 'INV-003', client: 'GlobalSystems', amount: 22750, status: 'paid', date: 'Jan 15, 2026' },
-        { id: 'INV-004', client: 'DigitalSolutions', amount: 6300, status: 'overdue', date: 'Jan 10, 2026' },
-        { id: 'INV-005', client: 'InnovateLabs', amount: 4200, status: 'pending', date: 'Jan 28, 2026' }
+        { id: 'INV-001', client: 'TATA', amount: 15200, status: 'paid', date: 'Jan 25, 2026' },
+        { id: 'INV-002', client: 'Reliance', amount: 8500, status: 'pending', date: 'Jan 27, 2026' },
+        { id: 'INV-003', client: 'Infosys', amount: 22750, status: 'paid', date: 'Jan 15, 2026' },
+        { id: 'INV-004', client: 'Mahindra', amount: 6300, status: 'overdue', date: 'Jan 10, 2026' },
+        { id: 'INV-005', client: 'Airtel', amount: 4200, status: 'pending', date: 'Jan 28, 2026' }
     ];
     
     dashboard.innerHTML = headerHTML + `
@@ -1153,11 +1153,11 @@ function showTeamContent() {
     const headerHTML = dashboard.querySelector('.page-header').outerHTML;
     
     const team = [
-        { name: 'John Doe', role: 'Administrator', email: 'john@company.com', status: 'active', avatar: 'JD' },
-        { name: 'Sarah Smith', role: 'Project Manager', email: 'sarah@company.com', status: 'active', avatar: 'SS' },
-        { name: 'Mike Johnson', role: 'Developer', email: 'mike@company.com', status: 'active', avatar: 'MJ' },
-        { name: 'Emily Brown', role: 'Designer', email: 'emily@company.com', status: 'active', avatar: 'EB' },
-        { name: 'David Lee', role: 'Accountant', email: 'david@company.com', status: 'active', avatar: 'DL' }
+        { name: 'Vishnu Kusi', role: 'Administrator', email: 'vishnu@company.com', status: 'active', avatar: 'JD' },
+        { name: 'Teju', role: 'Project Manager', email: 'teju@company.com', status: 'active', avatar: 'SS' },
+        { name: 'Guna', role: 'Developer', email: 'guna@company.com', status: 'active', avatar: 'MJ' },
+        { name: 'Chaya', role: 'Designer', email: 'chaya@company.com', status: 'active', avatar: 'EB' },
+        { name: 'Rudri', role: 'Accountant', email: 'rudri@company.com', status: 'active', avatar: 'DL' }
     ];
     
     dashboard.innerHTML = headerHTML + `
