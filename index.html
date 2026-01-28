@@ -609,19 +609,25 @@
             font-size: 0.8rem;
             color: var(--text-dim);
         }
+        .chart-wrapper {
+            padding: 1rem 0;
+        }
 
         /* Chart Container */
         .chart-container {
             height: 280px;
+            max-height:280px;
             display: flex;
             align-items: flex-end;
             justify-content: space-between;
-            gap: 0.5rem;
-            padding: 1rem 0;
+            gap: 0.75rem;
+            
         }
+
 
         .chart-bar {
             flex: 1;
+            max-height: 95%;
             background: linear-gradient(180deg, var(--accent) 0%, var(--success) 100%);
             border-radius: 8px 8px 0 0;
             position: relative;
@@ -638,12 +644,14 @@
         .chart-bar::after {
             content: attr(data-value);
             position: absolute;
-            top: -25px;
+            top: -1.5rem;
+            white-space: nowrap;
             left: 50%;
             transform: translateX(-50%);
             font-size: 0.75rem;
             font-weight: 600;
             color: var(--text);
+            transition : height 0.8s ease;
         }
 
         .chart-labels {
@@ -1090,7 +1098,7 @@
                                             <div class="client-avatar">RL</div>
                                             <div>
                                                 <div style="font-weight: 600;">Reliance</div>
-                                                <div style="font-size: 0.85rem; color: var(--text-dim);">contact@Reliance.com</div>
+                                                <div style="font-size: 0.85rem; color: var(--text-dim);">contact@reliance.com</div>
                                             </div>
                                         </div>
                                     </td>
@@ -1104,7 +1112,7 @@
                                             <div class="client-avatar">TA</div>
                                             <div>
                                                 <div style="font-weight: 600;">TATA</div>
-                                                <div style="font-size: 0.85rem; color: var(--text-dim);">info@TATA.io</div>
+                                                <div style="font-size: 0.85rem; color: var(--text-dim);">info@tata.io</div>
                                             </div>
                                         </div>
                                     </td>
@@ -1131,12 +1139,12 @@
                                         <div class="client-info">
                                             <div class="client-avatar">IN</div>
                                             <div>
-                                                <div style="font-weight: 600;">INFOSYS</div>
+                                                <div style="font-weight: 600;">Infosys</div>
                                                 <div style="font-size: 0.85rem; color: var(--text-dim);">team@infosys.net</div>
                                             </div>
                                         </div>
                                     </td>
-                                    <td>India Campaign</td>
+                                    <td>SEO Campaign</td>
                                     <td><span class="status-badge active">Active</span></td>
                                     <td style="font-weight: 600;">$6,300</td>
                                 </tr>
@@ -1170,7 +1178,7 @@
                             <div class="activity-icon orange">👤</div>
                             <div class="activity-content">
                                 <h4>New client added</h4>
-                                <p style="font-size: 0.85rem; color: var(--text-dim);">Mahindra joined your network</p>
+                                <p style="font-size: 0.85rem; color: var(--text-dim);">Infosys joined your network</p>
                                 <div class="activity-time">1 day ago</div>
                             </div>
                         </div>
@@ -1200,14 +1208,16 @@
                     <h2 class="card-title">Revenue Overview</h2>
                     <button class="btn btn-primary">Download Report</button>
                 </div>
-                <div class="chart-container">
-                    <div class="chart-bar" style="height: 6%;" data-value="8.2k rupee"></div>
-                    <div class="chart-bar" style="height: 8%;" data-value="10.5k rupee"></div>
-                    <div class="chart-bar" style="height: 5%;" data-value="6.8k rupee"></div>
-                    <div class="chart-bar" style="height: 9%;" data-value="12.1k rupee"></div>
-                    <div class="chart-bar" style="height: 7%;" data-value="9.3k rupee"></div>
-                    <div class="chart-bar" style="height: 6%;" data-value="7.5k rupee"></div>
-                    <div class="chart-bar" style="height: 10%;" data-value="13.8k rupee"></div>
+                <div class = "chart-wrapper"></div>
+                    <div class="chart-container">
+                        <div class="chart-bar"  data-value="8200"></div>
+                        <div class="chart-bar"  data-value="10500"></div>
+                        <div class="chart-bar"  data-value="6800"></div>
+                        <div class="chart-bar"  data-value="12100"></div>
+                        <div class="chart-bar"  data-value="9300"></div>
+                        <div class="chart-bar"  data-value="7500"></div>
+                        <div class="chart-bar"  data-value="13800"></div>
+                    </div>
                 </div>
                 <div class="chart-labels">
                     <span>Mon</span>
@@ -1282,8 +1292,8 @@
                         <option>Select client</option>
                         <option>Reliance</option>
                         <option>TATA</option>
-                        <option>Mahindra</option>
-                        <option>infosys</option>
+                        <option>mahindra</option>
+                        <option>Infosys</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -1326,7 +1336,7 @@
                         <option>Select client</option>
                         <option>Reliance</option>
                         <option>TATA</option>
-                        <option>Mahindra</option>
+                        <option>mahindra</option>
                         <option>Infosys</option>
                     </select>
                 </div>
@@ -1407,5 +1417,31 @@
 
     <!-- Include External JavaScript -->
     <script src="business-manager.js"></script>
+   
+    <script>
+  // 1️⃣ Create the function (GLOBAL)
+            function renderChartBars() {
+            const bars = document.querySelectorAll(".chart-bar");
+            if (!bars.length) return;
+
+            const values = Array.from(bars).map(bar =>
+            Number(bar.dataset.value)
+            );
+
+            const maxValue = Math.max(...values);
+
+            bars.forEach(bar => {
+            const percentage = (bar.dataset.value / maxValue) * 100;
+            bar.style.height = percentage + "%";
+            });
+        }
+
+       
+        document.addEventListener("DOMContentLoaded", () => {
+            renderChartBars();
+        });
+    </script>
+
+
 </body>
 </html>
