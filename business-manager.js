@@ -770,7 +770,7 @@ function showReportsContent() {
                 <div style="padding: 1rem 0;">
                     <div style="padding: 1rem; border-bottom: 1px solid var(--border);">
                         <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                            <span style="font-weight: 600;">Cloud Migration - GlobalSystems</span>
+                            <span style="font-weight: 600;">Cloud Migration - Infosys</span>
                             <span style="color: var(--success);">$22,750</span>
                         </div>
                         <div style="background: rgba(255,255,255,0.05); height: 8px; border-radius: 4px; overflow: hidden;">
@@ -779,7 +779,7 @@ function showReportsContent() {
                     </div>
                     <div style="padding: 1rem; border-bottom: 1px solid var(--border);">
                         <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                            <span style="font-weight: 600;">Mobile App Dev - TechInnovate</span>
+                            <span style="font-weight: 600;">Mobile App Dev - TATA</span>
                             <span style="color: var(--success);">$15,200</span>
                         </div>
                         <div style="background: rgba(255,255,255,0.05); height: 8px; border-radius: 4px; overflow: hidden;">
@@ -788,7 +788,7 @@ function showReportsContent() {
                     </div>
                     <div style="padding: 1rem; border-bottom: 1px solid var(--border);">
                         <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                            <span style="font-weight: 600;">Website Redesign - Acme Corp</span>
+                            <span style="font-weight: 600;">Website Redesign - Reliance</span>
                             <span style="color: var(--success);">$8,500</span>
                         </div>
                         <div style="background: rgba(255,255,255,0.05); height: 8px; border-radius: 4px; overflow: hidden;">
@@ -922,11 +922,11 @@ function showFinanceContent() {
                 </div>
                 <div style="padding: 0.5rem 0;">
                     ${[
-                        { type: 'income', desc: 'Payment from TechInnovate', amount: 15200, date: 'Today' },
+                        { type: 'income', desc: 'Payment from TATA', amount: 15200, date: 'Today' },
                         { type: 'expense', desc: 'Software Licenses', amount: -2500, date: 'Yesterday' },
-                        { type: 'income', desc: 'Payment from Acme Corp', amount: 8500, date: '2 days ago' },
+                        { type: 'income', desc: 'Payment from Reliance', amount: 8500, date: '2 days ago' },
                         { type: 'expense', desc: 'Office Supplies', amount: -350, date: '3 days ago' },
-                        { type: 'income', desc: 'Payment from GlobalSystems', amount: 22750, date: '4 days ago' },
+                        { type: 'income', desc: 'Payment from Infosys', amount: 22750, date: '4 days ago' },
                         { type: 'expense', desc: 'Marketing Campaign', amount: -5000, date: '5 days ago' }
                     ].map(transaction => `
                         <div style="padding: 1rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
